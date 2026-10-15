@@ -1,0 +1,1659 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpeedTest Pro</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="page">
+
+    <!-- Page ka main header aur app ke features -->
+    <header class="hero">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <path
+            d="M17 71a38 38 0 1 1 66 0"
+            stroke="currentColor"
+            stroke-width="10"
+            stroke-linecap="round"
+          />
+          <path
+            d="m25 31 5 8m45-8-5 8M15 51l10 2m60-2-10 2M50 21v10"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="round"
+          />
+          <path
+            d="m50 51 18-18"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="round"
+          />
+          <circle cx="50" cy="51" r="5" fill="currentColor" />
+        </svg>
+
+        <div>
+          <h1>Speed<span>Test Pro</span></h1>
+          <p class="tagline">
+            A modern browser-based internet speed testing application.
+          </p>
+        </div>
+      </div>
+
+      <aside class="profile-card" aria-label="Rohit Kumar Kushwaha profile">
+        <button
+          class="profile-trigger"
+          id="profileTrigger"
+          type="button"
+          aria-label="Open Rohit Kumar Kushwaha profile"
+          aria-expanded="false"
+          aria-controls="profileDetails"
+        >
+          <img
+            class="profile-photo"
+            src="profile-photo.jpg"
+            alt="Rohit Kumar Kushwaha"
+          />
+        </button>
+      </aside>
+
+      <div class="feature-grid">
+        <button class="feature" type="button" data-feature="meter">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path
+              d="M3 15a9 9 0 1 1 18 0M6 15h.01M18 15h.01M12 6v2m-7 3 2 1m12-1-2 1"
+              stroke="currentColor"
+            />
+            <path d="m12 15 4-5" stroke="currentColor" />
+          </svg>
+          <span>Animated<br />Speed Meter</span>
+        </button>
+
+        <button class="feature" type="button" data-feature="graph">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="m3 17 5-6 4 3 7-9M3 20h18" stroke="currentColor" />
+          </svg>
+          <span>Live Graph</span>
+        </button>
+
+        <button class="feature" type="button" data-feature="server">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="5" y="3" width="14" height="5" rx="1" stroke="currentColor" />
+            <rect x="5" y="10" width="14" height="5" rx="1" stroke="currentColor" />
+            <path d="M5 17h9v4H5z" stroke="currentColor" />
+          </svg>
+          <span>Server<br />Selection</span>
+        </button>
+
+        <button class="feature" type="button" data-feature="unit">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" />
+            <path d="M8 4v16M16 4v16" stroke="currentColor" />
+          </svg>
+          <span>Mbps / MBps<br />Display Options</span>
+        </button>
+
+        <button class="feature" type="button" data-feature="jitter">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M2 13h4l2-7 4 14 3-9 2 4h5" stroke="currentColor" />
+          </svg>
+          <span>Jitter<br />Measurement</span>
+        </button>
+
+        <button class="feature" type="button" data-feature="info">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" />
+            <path
+              d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"
+              stroke="currentColor"
+            />
+          </svg>
+          <span>IP / ISP<br />Display</span>
+        </button>
+      </div>
+    </header>
+
+    <section
+      class="profile-page"
+      id="profileDetails"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="profilePageTitle"
+    >
+      <div class="profile-page-content">
+        <img
+          class="profile-page-photo"
+          src="profile-photo.jpg"
+          alt="Rohit Kumar Kushwaha"
+        />
+        <span class="section-kicker">PROFILE</span>
+        <h2 id="profilePageTitle">Rohit Kumar Kushwaha</h2>
+        <p class="profile-intro">SpeedTest Pro creator and web developer.</p>
+        <div class="profile-links">
+          <a
+            class="profile-link"
+            href="https://github.com/rohitkush007"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>GitHub</span>
+            <small>github.com/rohitkush007</small>
+          </a>
+          <a class="profile-link" href="mailto:rohit238359@gmail.com">
+            <span>Email</span>
+            <small>rohit238359@gmail.com</small>
+          </a>
+          <div class="profile-link">
+            <span>Phone</span>
+            <small>97******61</small>
+          </div>
+        </div>
+        <p class="profile-dismiss-hint">Click anywhere to close</p>
+      </div>
+    </section>
+
+    <section class="shell">
+
+      <!-- Navigation bar -->
+      <nav class="topbar">
+        <div class="nav-brand">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 16a8 8 0 1 1 16 0" stroke="currentColor" stroke-width="2" />
+            <path d="m12 16 4-5" stroke="currentColor" stroke-width="2" />
+          </svg>
+          SpeedTest Pro
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Primary navigation">
+          <button class="tab active" role="tab" aria-selected="true">
+            Speed Test
+          </button>
+          <button class="tab" role="tab" aria-selected="false">
+            Settings
+          </button>
+        </div>
+
+        <div class="live-status">
+          <i></i>
+          Browser ready
+        </div>
+
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          type="button"
+          aria-label="Toggle light theme"
+        >
+          ☼
+        </button>
+
+        <div class="server-control">
+          <label>Detected test server</label>
+
+          <div class="detected-server">
+            <span class="server-pulse"></span>
+            <span id="serverName">Detecting nearby server...</span>
+          </div>
+        </div>
+      </nav>
+
+      <div class="content">
+
+        <!-- Left side: speed meters and test controls -->
+        <div class="meter-area">
+
+          <div class="gauge-pair">
+
+            <!-- Download meter -->
+            <div class="gauge gauge-download">
+              <div class="gauge-heading">
+                <i class="dot"></i>
+                <span>Download</span>
+              </div>
+
+              <svg viewBox="0 0 340 210" fill="none">
+                <defs>
+                  <linearGradient id="downloadCyan" x1="50" y1="180" x2="180" y2="25">
+                    <stop stop-color="#20cfff" />
+                    <stop offset="1" stop-color="#087ee4" />
+                  </linearGradient>
+
+                  <linearGradient id="downloadViolet" x1="180" y1="30" x2="300" y2="180">
+                    <stop stop-color="#c343ff" />
+                    <stop offset="1" stop-color="#7c1de2" />
+                  </linearGradient>
+                </defs>
+
+                <path
+                  d="M55 167A122 122 0 0 1 169 31"
+                  stroke="#0b427a"
+                  stroke-width="18"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M169 31A122 122 0 0 1 283 167"
+                  stroke="#0b427a"
+                  stroke-width="18"
+                  stroke-linecap="round"
+                />
+
+                <path
+                  d="M55 167A122 122 0 0 1 169 31"
+                  stroke="url(#downloadCyan)"
+                  stroke-width="18"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M169 31A122 122 0 0 1 283 167"
+                  stroke="url(#downloadViolet)"
+                  stroke-width="18"
+                  stroke-linecap="round"
+                />
+
+                <path
+                  d="M67 161A109 109 0 0 1 168 43M180 43A109 109 0 0 1 270 161"
+                  stroke="#4edbff"
+                  stroke-opacity=".2"
+                  stroke-width="2"
+                />
+
+                <g fill="#dcecff" font-size="10" text-anchor="middle">
+                  <text x="52" y="174">0</text>
+                  <text x="61" y="105">10</text>
+                  <text x="91" y="61">20</text>
+                  <text x="132" y="45">30</text>
+                  <text x="177" y="57">50</text>
+                  <text x="221" y="105">75</text>
+                  <text x="267" y="174">100</text>
+                </g>
+
+                <g
+                  class="gauge-needle"
+                  id="downloadNeedle"
+                  transform="rotate(-90 170 158)"
+                >
+                  <path d="M170 158 166 57 174 57Z" fill="var(--cyan)" />
+                  <circle
+                    cx="170"
+                    cy="158"
+                    r="9"
+                    fill="var(--panel-2)"
+                    stroke="var(--cyan)"
+                    stroke-width="3"
+                  />
+                </g>
+              </svg>
+
+              <div class="gauge-value">
+                <strong id="speed">0.00</strong>
+                <small>Mbps</small>
+              </div>
+
+              <div class="speed-zones" aria-label="Speed quality zones">
+                <span>Slow</span>
+                <span>Fair</span>
+                <span>Good</span>
+                <span>Excellent</span>
+              </div>
+            </div>
+
+            <!-- Upload meter -->
+            <div class="gauge gauge-upload">
+              <div class="gauge-heading">
+                <i class="dot purple"></i>
+                <span>Upload</span>
+              </div>
+
+              <svg viewBox="0 0 340 210" fill="none">
+                <defs>
+                  <linearGradient id="uploadCyan" x1="50" y1="180" x2="180" y2="25">
+                    <stop stop-color="#c343ff" />
+                    <stop offset="1" stop-color="#7c1de2" />
+                  </linearGradient>
+
+                  <linearGradient id="uploadViolet" x1="180" y1="30" x2="300" y2="180">
+                    <stop stop-color="#20cfff" />
+                    <stop offset="1" stop-color="#087ee4" />
+                  </linearGradient>
+                </defs>
+
+                <path
+                  d="M55 167A122 122 0 0 1 169 31"
+                  stroke="#0b427a"
+                  stroke-width="18"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M169 31A122 122 0 0 1 283 167"
+                  stroke="#0b427a"
+                  stroke-width="18"
+                  stroke-linecap="round"
+                />
+
+                <path
+                  d="M55 167A122 122 0 0 1 169 31"
+                  stroke="url(#uploadCyan)"
+                  stroke-width="18"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M169 31A122 122 0 0 1 283 167"
+                  stroke="url(#uploadViolet)"
+                  stroke-width="18"
+                  stroke-linecap="round"
+                />
+
+                <path
+                  d="M67 161A109 109 0 0 1 168 43M180 43A109 109 0 0 1 270 161"
+                  stroke="#c58dff"
+                  stroke-opacity=".2"
+                  stroke-width="2"
+                />
+
+                <g fill="#dcecff" font-size="10" text-anchor="middle">
+                  <text x="52" y="174">0</text>
+                  <text x="61" y="105">10</text>
+                  <text x="91" y="61">20</text>
+                  <text x="132" y="45">30</text>
+                  <text x="177" y="57">50</text>
+                  <text x="221" y="105">75</text>
+                  <text x="267" y="174">100</text>
+                </g>
+
+                <g
+                  class="gauge-needle upload-needle"
+                  id="uploadNeedle"
+                  transform="rotate(-90 170 158)"
+                >
+                  <path d="M170 158 166 57 174 57Z" fill="var(--purple)" />
+                  <circle
+                    cx="170"
+                    cy="158"
+                    r="9"
+                    fill="var(--panel-2)"
+                    stroke="var(--purple)"
+                    stroke-width="3"
+                  />
+                </g>
+              </svg>
+
+              <div class="gauge-value">
+                <strong id="uploadSpeed">0.00</strong>
+                <small>Mbps</small>
+              </div>
+
+              <div class="speed-zones" aria-label="Speed quality zones">
+                <span>Slow</span>
+                <span>Fair</span>
+                <span>Good</span>
+                <span>Excellent</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Settings panel -->
+          <section class="settings-panel" id="settingsPanel" hidden>
+            <div class="panel-heading">
+              <div>
+                <span class="section-kicker">PREFERENCES</span>
+                <h2>Test settings</h2>
+              </div>
+            </div>
+
+            <label class="setting-row">
+              <span>
+                <b>Measurement unit</b>
+                <small>Choose how results are displayed</small>
+              </span>
+
+              <select id="unitSelect">
+                <option value="Mbps">Mbps</option>
+                <option value="MB/s">MB/s</option>
+              </select>
+            </label>
+
+            <label class="setting-row">
+              <span>
+                <b>Auto-run on page load</b>
+                <small>Start a test when the page opens</small>
+              </span>
+              <input id="autoRun" type="checkbox" checked />
+            </label>
+
+            <label class="setting-row">
+              <span>
+                <b>Light theme</b>
+                <small>Use a brighter interface</small>
+              </span>
+              <input id="themeSetting" type="checkbox" />
+            </label>
+
+            <label class="setting-row">
+              <span>
+                <b>Use precise location</b>
+                <small>Improve server and location accuracy</small>
+              </span>
+              <input id="locationSetting" type="checkbox" />
+            </label>
+
+            <label class="setting-row">
+              <span>
+                <b>Privacy mode</b>
+                <small>Skip public IP and location lookups</small>
+              </span>
+              <input id="privacySetting" type="checkbox" />
+            </label>
+
+            <label class="setting-row">
+              <span>
+                <b>Reduce motion</b>
+                <small>Respect a calmer interface</small>
+              </span>
+              <input id="motionSetting" type="checkbox" />
+            </label>
+
+            <label class="setting-row">
+              <span>
+                <b>High contrast</b>
+                <small>Increase contrast for readability</small>
+              </span>
+              <input id="contrastSetting" type="checkbox" />
+            </label>
+
+            <label class="setting-row">
+              <span>
+                <b>Text size</b>
+                <small>Adjust interface text</small>
+              </span>
+
+              <select id="textSize">
+                <option value="normal">Normal</option>
+                <option value="large">Large</option>
+                <option value="larger">Larger</option>
+              </select>
+            </label>
+
+            <button class="fullscreen-button" id="fullscreenButton" type="button">
+              Enter fullscreen testing mode
+            </button>
+
+            <div class="privacy-box">
+              <b>Privacy controls</b>
+              <p>
+                Results stay in this browser. Network details are requested
+                only when enabled and a test starts.
+              </p>
+
+              <button class="clear-button" id="clearData">
+                Clear all local data
+              </button>
+            </div>
+          </section>
+
+          <div class="network-warning" id="networkWarning" role="alert" hidden>
+            Connection lost. The current test will stop safely.
+          </div>
+
+          <div class="status" id="status">Ready to test</div>
+
+          <div class="progress-wrap" aria-live="polite">
+            <div class="progress-label">
+              <span id="stageLabel">Ready</span>
+              <span id="progressPercent">0%</span>
+            </div>
+
+            <div class="progress-track">
+              <span id="progressBar"></span>
+            </div>
+          </div>
+
+          <div class="test-controls">
+            <button class="test-button" id="testButton" type="button">
+              Run real test
+            </button>
+
+            <button class="cancel-button" id="cancelButton" type="button" hidden>
+              Cancel
+            </button>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <i class="dot"></i>
+              Download
+              <b id="download">0.00 <em>Mbps</em></b>
+            </div>
+
+            <div class="stat">
+              <i class="dot purple"></i>
+              Upload
+              <b id="upload">0.00 <em>Mbps</em></b>
+            </div>
+
+            <div class="stat">
+              <i class="dot"></i>
+              Ping
+              <b id="ping">-- <em>ms</em></b>
+            </div>
+
+            <div class="stat">
+              <i class="dot purple"></i>
+              Jitter
+              <b id="jitter">-- <em>ms</em></b>
+            </div>
+
+            <div class="stat">
+              <i class="dot"></i>
+              Loss
+              <b id="packetLoss">-- <em>%</em></b>
+            </div>
+
+            <div class="stat score-stat">
+              <i class="dot purple"></i>
+              Quality
+              <b id="qualityScore">-- <em>/100</em></b>
+            </div>
+          </div>
+
+          <div class="quality-cards" id="qualityCards" aria-live="polite"></div>
+
+          <p class="recommendation" id="recommendation" aria-live="polite"></p>
+        </div>
+
+        <!-- Right side: graph aur connection information -->
+        <div class="right-column">
+          <div class="chart-card">
+            <div class="legend">
+              <span><i></i>Download</span>
+              <span><i class="purple"></i>Upload</span>
+            </div>
+
+            <svg
+              class="chart"
+              viewBox="0 0 470 150"
+              preserveAspectRatio="none"
+            >
+              <g class="chart-grid">
+                <path
+                  d="M20 15H465M20 48H465M20 81H465M20 114H465M20 140H465M20 15v125M131 15v125M242 15v125M353 15v125M465 15v125"
+                />
+              </g>
+
+              <g class="chart-label">
+                <text x="0" y="18">120</text>
+                <text x="5" y="51">80</text>
+                <text x="5" y="84">40</text>
+                <text x="11" y="118">0</text>
+                <text x="16" y="149">0s</text>
+                <text x="126" y="149">5s</text>
+                <text x="232" y="149">10s</text>
+                <text x="343" y="149">15s</text>
+                <text x="449" y="149">20s</text>
+              </g>
+
+              <path
+                class="download-line"
+                d="M20 115 C35 48 48 49 63 49 S90 42 109 48 S141 31 163 35 S196 46 218 39 S247 35 266 31 S300 22 324 25 S356 18 383 21 S414 15 437 20 S453 18 465 20"
+              />
+
+              <path
+                class="upload-line"
+                d="M20 115 C35 87 48 84 65 83 S95 73 115 80 S148 67 177 73 S207 68 230 71 S260 69 278 65 S310 69 335 64 S365 69 390 67 S427 72 465 71"
+              />
+            </svg>
+          </div>
+
+          <div class="info-card">
+            <div class="info">
+              <label>IP Address</label>
+              <span>Detecting...</span>
+            </div>
+
+            <div class="info">
+              <label>ISP / ASN</label>
+              <span>Detecting...</span>
+            </div>
+
+            <div class="info">
+              <label>
+                Location
+                <small id="locationSource"></small>
+              </label>
+              <span>Detecting...</span>
+            </div>
+
+            <div class="info">
+              <label>Connection</label>
+              <span id="connectionInfo">Detecting...</span>
+            </div>
+
+            <div class="info">
+              <label>Downlink</label>
+              <span id="downlinkInfo">--</span>
+            </div>
+
+            <div class="info">
+              <label>Data saver</label>
+              <span id="saveDataInfo">--</span>
+            </div>
+
+            <div class="info">
+              <label>Browser</label>
+              <span id="browserInfo">--</span>
+            </div>
+
+            <div class="info">
+              <label>Online</label>
+              <span id="onlineInfo">--</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Chhote selectors ko baar-baar likhne se bachne ke liye helper banaya gaya hai
+    const $ = (selector) => document.querySelector(selector);
+
+    const speedValue = $('#speed');
+    const uploadSpeedValue = $('#uploadSpeed');
+    const downloadValue = $('#download');
+    const uploadValue = $('#upload');
+    const jitterValue = $('#jitter');
+
+    const statusText = $('#status');
+    const liveStatus = $('.live-status');
+    const testButton = $('#testButton');
+    const downloadLine = $('.download-line');
+    const uploadLine = $('.upload-line');
+    const profileTrigger = $('#profileTrigger');
+    const profileDetails = $('#profileDetails');
+
+    function closeProfile() {
+      profileDetails.hidden = true;
+      profileTrigger.setAttribute('aria-expanded', 'false');
+      profileTrigger.focus();
+    }
+
+    profileTrigger.addEventListener('click', () => {
+      profileDetails.hidden = false;
+      profileTrigger.setAttribute('aria-expanded', 'true');
+    });
+
+    profileDetails.addEventListener('click', closeProfile);
+
+    const featureTargets = {
+      meter: '.gauge-pair',
+      graph: '.chart-card',
+      server: '.server-control',
+      unit: '#unitSelect',
+      jitter: '.stats',
+      info: '.info-card'
+    };
+
+    document.querySelectorAll('[data-feature]').forEach((feature) => {
+      feature.addEventListener('click', () => {
+        const target = $(featureTargets[feature.dataset.feature]);
+
+        if (!target) {
+          return;
+        }
+
+        if (feature.dataset.feature === 'meter' && !isTesting) {
+          runTest();
+        }
+
+        if (feature.dataset.feature === 'unit') {
+          switchPanel('Settings');
+        }
+
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        feature.classList.add('feature-selected');
+        setTimeout(() => feature.classList.remove('feature-selected'), 900);
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !profileDetails.hidden) {
+        closeProfile();
+      }
+    });
+
+    // Cloudflare ke endpoints speed measurement ke liye use honge
+    const downloadUrl = 'https://speed.cloudflare.com/__down?bytes=';
+    const uploadUrl = 'https://speed.cloudflare.com/__up';
+
+    let isTesting = false;
+    let currentUnit = localStorage.getItem('speedtest-unit') || 'Mbps';
+    let latestResult = null;
+    let abortController = null;
+
+    // MB/s select hone par Mbps ko bytes per second me convert karte hain
+    function convertSpeed(value) {
+      return currentUnit === 'MB/s' ? value / 8 : value;
+    }
+
+    function showSpeed(element, value) {
+      element.innerHTML = `${convertSpeed(value).toFixed(2)} <em>${currentUnit}</em>`;
+    }
+
+    // Network request ko timeout aur retry support diya gaya hai
+    async function requestWithRetry(url, options = {}, attempts = 2) {
+      let lastError;
+
+      for (let attempt = 0; attempt <= attempts; attempt++) {
+        const timeoutController = new AbortController();
+
+        const timeout = setTimeout(() => {
+          timeoutController.abort();
+        }, 15000);
+
+        const parentSignal = options.signal;
+
+        const abortParentRequest = () => {
+          timeoutController.abort();
+        };
+
+        parentSignal?.addEventListener('abort', abortParentRequest, {
+          once: true
+        });
+
+        try {
+          const response = await fetch(url, {
+            ...options,
+            signal: timeoutController.signal
+          });
+
+          clearTimeout(timeout);
+          parentSignal?.removeEventListener('abort', abortParentRequest);
+
+          return response;
+        } catch (error) {
+          clearTimeout(timeout);
+          parentSignal?.removeEventListener('abort', abortParentRequest);
+
+          lastError = parentSignal?.aborted
+            ? new DOMException('The operation was aborted', 'AbortError')
+            : error;
+
+          if (
+            lastError.name === 'AbortError' &&
+            parentSignal?.aborted
+          ) {
+            throw lastError;
+          }
+
+          if (attempt < attempts) {
+            await new Promise((resolve) => {
+              setTimeout(resolve, 350 * (attempt + 1));
+            });
+          }
+        }
+      }
+
+      throw lastError;
+    }
+
+    function updateProgress(percent, label) {
+      $('#progressBar').style.width = `${percent}%`;
+      $('#progressPercent').textContent = `${percent}%`;
+      $('#stageLabel').textContent = label;
+    }
+
+    // Meter ki needle ko current speed ke hisaab se rotate karte hain
+    function updateGauge(value, needleId) {
+      const scale = Math.max(
+        100,
+        Math.ceil(Math.max(value, 1) / 50) * 50
+      );
+
+      const angle =
+        -90 +
+        (Math.max(0, Math.min(value, scale)) / scale) * 180;
+
+      $(`#${needleId}`).setAttribute(
+        'transform',
+        `rotate(${angle.toFixed(1)} 170 158)`
+      );
+    }
+
+    // Live graph ke liye SVG path update hota hai
+    function drawLine(
+      path,
+      values,
+      max = Math.max(
+        100,
+        Math.ceil(Math.max(...values, 1) / 50) * 50
+      )
+    ) {
+      const points = values.map((value, index) => {
+        const x =
+          20 +
+          (445 * index) / Math.max(values.length - 1, 1);
+
+        const y = 140 - Math.min(value, max) / max * 125;
+
+        return `${x.toFixed(1)} ${y.toFixed(1)}`;
+      });
+
+      if (points.length > 1) {
+        path.setAttribute('d', `M${points.join(' L')}`);
+      }
+    }
+
+    // Multiple small requests ke through latency, jitter aur packet loss calculate hota hai
+    async function measurePing() {
+      const samples = [];
+      const endpoint = `${downloadUrl}1000&cacheBust=`;
+
+      for (let index = 0; index < 5; index++) {
+        const startedAt = performance.now();
+
+        try {
+          const response = await requestWithRetry(
+            `${endpoint}${Date.now()}-${index}`,
+            {
+              cache: 'no-store',
+              signal: abortController?.signal
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(`Ping request failed (${response.status})`);
+          }
+
+          await response.arrayBuffer();
+          samples.push(performance.now() - startedAt);
+        } catch (error) {
+          if (
+            error.name === 'AbortError' &&
+            abortController?.signal.aborted
+          ) {
+            throw error;
+          }
+
+          samples.push(null);
+        }
+      }
+
+      const validSamples = samples.filter(Number.isFinite);
+
+      const packetLoss =
+        ((samples.length - validSamples.length) / samples.length) * 100;
+
+      if (!validSamples.length) {
+        throw new Error('Ping requests failed');
+      }
+
+      const average =
+        validSamples.reduce((sum, value) => sum + value, 0) /
+        validSamples.length;
+
+      const deviation = Math.sqrt(
+        validSamples.reduce(
+          (sum, value) => sum + (value - average) ** 2,
+          0
+        ) / validSamples.length
+      );
+
+      $('#ping').innerHTML = `${average.toFixed(1)} <em>ms</em>`;
+      jitterValue.innerHTML = `${deviation.toFixed(1)} <em>ms</em>`;
+      $('#packetLoss').innerHTML = `${packetLoss.toFixed(1)} <em>%</em>`;
+
+      return {
+        ping: average,
+        jitter: deviation,
+        loss: packetLoss
+      };
+    }
+
+    // Download speed ko alag-alag file sizes ke saath test karte hain
+    async function measureDownload() {
+      const samples = [];
+      const elapsedTimes = [];
+
+      for (const bytes of [250000, 1000000, 5000000]) {
+        const startedAt = performance.now();
+
+        const response = await requestWithRetry(
+          `${downloadUrl}${bytes}&cacheBust=${Date.now()}-${bytes}`,
+          {
+            cache: 'no-store',
+            signal: abortController?.signal
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(`Download request failed (${response.status})`);
+        }
+
+        const data = await response.arrayBuffer();
+        const elapsedSeconds =
+          (performance.now() - startedAt) / 1000;
+
+        elapsedTimes.push(elapsedSeconds * 1000);
+
+        const measuredSpeed =
+          data.byteLength * 8 / elapsedSeconds / 1000000;
+
+        samples.push(measuredSpeed);
+
+        drawLine(downloadLine, samples);
+
+        speedValue.textContent =
+          convertSpeed(measuredSpeed).toFixed(2);
+
+        updateGauge(measuredSpeed, 'downloadNeedle');
+        showSpeed(downloadValue, measuredSpeed);
+
+        statusText.textContent =
+          `Measuring download... ${measuredSpeed.toFixed(2)} Mbps`;
+      }
+
+      const average =
+        elapsedTimes.reduce((sum, value) => sum + value, 0) /
+        elapsedTimes.length;
+
+      const deviation = Math.sqrt(
+        elapsedTimes.reduce(
+          (sum, value) => sum + (value - average) ** 2,
+          0
+        ) / elapsedTimes.length
+      );
+
+      jitterValue.innerHTML = `${deviation.toFixed(1)} <em>ms</em>`;
+
+      return samples.at(-1);
+    }
+
+    // Upload test ke liye dummy data server par bheja jata hai
+    async function measureUpload() {
+      const samples = [];
+
+      for (const size of [250000, 1000000]) {
+        const payload = new Blob(
+          [new Uint8Array(size)],
+          { type: 'application/octet-stream' }
+        );
+
+        const startedAt = performance.now();
+
+        const response = await requestWithRetry(
+          `${uploadUrl}?cacheBust=${Date.now()}-${size}`,
+          {
+            method: 'POST',
+            body: payload,
+            cache: 'no-store',
+            signal: abortController?.signal
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(`Upload request failed (${response.status})`);
+        }
+
+        const elapsedSeconds =
+          (performance.now() - startedAt) / 1000;
+
+        const measuredSpeed =
+          size * 8 / elapsedSeconds / 1000000;
+
+        samples.push(measuredSpeed);
+
+        drawLine(uploadLine, samples);
+
+        uploadSpeedValue.textContent =
+          convertSpeed(measuredSpeed).toFixed(2);
+
+        updateGauge(measuredSpeed, 'uploadNeedle');
+        showSpeed(uploadValue, measuredSpeed);
+
+        statusText.textContent =
+          `Measuring upload... ${measuredSpeed.toFixed(2)} Mbps`;
+      }
+
+      return samples.at(-1);
+    }
+
+    function getDevicePosition() {
+      if (!navigator.geolocation) {
+        throw new Error('Geolocation is not supported');
+      }
+
+      return new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(
+          resolve,
+          reject,
+          {
+            enableHighAccuracy: true,
+            timeout: 8000,
+            maximumAge: 300000
+          }
+        );
+      });
+    }
+
+    // Coordinates ko readable location name me convert karte hain
+    async function reverseGeocode(latitude, longitude) {
+      const response = await requestWithRetry(
+        `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`,
+        {
+          cache: 'no-store'
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Location lookup failed (${response.status})`);
+      }
+
+      const address = (await response.json()).address || {};
+
+      return [
+        address.city || address.town || address.village,
+        address.state,
+        address.country
+      ]
+        .filter(Boolean)
+        .join(', ');
+    }
+
+    function updateConnectionInfo() {
+      const connection =
+        navigator.connection ||
+        navigator.mozConnection ||
+        navigator.webkitConnection;
+
+      const connectionType = connection?.type || '';
+      const effectiveType = connection?.effectiveType || '';
+
+      const isMobile =
+        connectionType === 'cellular' ||
+        ['slow-2g', '2g', '3g', '4g'].includes(effectiveType);
+
+      $('#connectionInfo').textContent =
+        isMobile
+          ? 'Mobile network'
+          : connectionType || 'Unavailable';
+
+      $('#downlinkInfo').textContent =
+        connection?.downlink
+          ? `${connection.downlink} Mbps`
+          : 'Unavailable';
+
+      $('#saveDataInfo').textContent =
+        connection?.saveData ? 'On' : 'Off';
+    }
+
+    function updateOnlineState(isOnline = navigator.onLine) {
+      $('#onlineInfo').textContent = isOnline ? 'Online' : 'Offline';
+      $('#networkWarning').hidden = isOnline;
+
+      liveStatus.innerHTML = isOnline
+        ? '<i></i> Browser ready'
+        : '<i class="busy"></i> Offline';
+
+      if (!isOnline && isTesting) {
+        abortController?.abort();
+      }
+    }
+
+    // IP, ISP aur approximate location ki information load hoti hai
+    async function updateNetworkDetails() {
+      const privacyEnabled =
+        localStorage.getItem('speedtest-privacy') === 'true';
+
+      if (privacyEnabled) {
+        updateConnectionInfo();
+        return null;
+      }
+
+      const response = await requestWithRetry(
+        'https://ipwho.is/',
+        {
+          cache: 'no-store'
+        }
+      );
+
+      const network = await response.json();
+
+      if (network.success === false || !network.ip) {
+        throw new Error('Public IP lookup was unavailable');
+      }
+
+      const infoElements = document.querySelectorAll('.info span');
+
+      infoElements[0].textContent = network.ip;
+
+      infoElements[1].textContent = [
+        network.connection?.isp || network.connection?.org,
+        network.connection?.asn
+          ? `AS${network.connection.asn}`
+          : ''
+      ]
+        .filter(Boolean)
+        .join(' · ') || 'Unavailable';
+
+      const ipLocation = [
+        network.city,
+        network.region,
+        network.country
+      ]
+        .filter(Boolean)
+        .join(', ');
+
+      infoElements[2].textContent =
+        ipLocation || 'Unavailable';
+
+      $('#locationSource').textContent = ' (IP estimate)';
+      $('#serverName').textContent =
+        ipLocation || 'Cloudflare edge (automatic)';
+
+      updateConnectionInfo();
+
+      const locationAllowed =
+        localStorage.getItem('speedtest-location') !== 'false';
+
+      if (locationAllowed) {
+        try {
+          const position = await getDevicePosition();
+
+          const exactLocation = await reverseGeocode(
+            position.coords.latitude,
+            position.coords.longitude
+          );
+
+          if (exactLocation) {
+            infoElements[2].textContent = exactLocation;
+            $('#locationSource').textContent = ' (device GPS)';
+            $('#serverName').textContent = exactLocation;
+          }
+        } catch (error) {
+          console.info(
+            'Precise device location unavailable; using IP location',
+            error.message
+          );
+        }
+      }
+
+      return network;
+    }
+
+    function calculateQualityScore(result) {
+      return Math.max(
+        0,
+        Math.min(
+          100,
+          Math.round(
+            Math.min(result.download / 1.5, 40) +
+            Math.min(result.upload / 1.5, 25) +
+            Math.max(0, 25 - result.ping / 4) +
+            Math.max(0, 10 - result.jitter) -
+            result.loss * 2
+          )
+        )
+      );
+    }
+
+    function renderQuality(result) {
+      const overall =
+        result.score >= 85
+          ? 'Excellent connection'
+          : result.score >= 65
+            ? 'Good connection'
+            : result.score >= 40
+              ? 'Fair connection'
+              : 'Needs improvement';
+
+      const cards = [
+        [
+          'Streaming',
+          result.download >= 50
+            ? '4K / multiple streams'
+            : result.download >= 25
+              ? '4K ready'
+              : result.download >= 10
+                ? 'HD ready'
+                : 'Basic'
+        ],
+        [
+          'Gaming',
+          result.ping < 30 &&
+          result.jitter < 8 &&
+          result.loss < 1
+            ? 'Excellent'
+            : result.ping < 60 &&
+              result.jitter < 15
+              ? 'Good'
+              : 'May lag'
+        ],
+        [
+          'Video calls',
+          result.upload >= 10 &&
+          result.loss < 1
+            ? 'Excellent'
+            : result.upload >= 5 &&
+              result.loss < 2
+              ? 'Stable'
+              : 'Check connection'
+        ]
+      ];
+
+      $('#qualityCards').innerHTML = cards
+        .map(([label, value]) => {
+          return `
+            <div class="quality-card">
+              <span>${label}</span>
+              <b>${value}</b>
+            </div>
+          `;
+        })
+        .join('');
+
+      let recommendation =
+        'Your connection is ready for everyday use.';
+
+      if (result.ping > 80) {
+        recommendation =
+          'Try a closer router or wired connection.';
+      } else if (result.download < 10) {
+        recommendation =
+          'Close background downloads for better performance.';
+      } else if (result.loss > 2) {
+        recommendation =
+          'Check Wi-Fi signal and network congestion.';
+      }
+
+      $('#recommendation').textContent =
+        `${overall}. ${recommendation}`;
+    }
+
+    // Speed Test aur Settings panel ke beech switch karte hain
+    function switchPanel(panelName) {
+      const settingsOpen = panelName === 'Settings';
+
+      $('#settingsPanel').hidden = !settingsOpen;
+      $('.gauge-pair').hidden = settingsOpen;
+      $('.status').hidden = settingsOpen;
+      $('.progress-wrap').hidden = settingsOpen;
+      $('.test-controls').hidden = settingsOpen;
+      $('.stats').hidden = settingsOpen;
+      $('.quality-cards').hidden = settingsOpen;
+      $('.recommendation').hidden = settingsOpen;
+      $('.right-column').hidden = settingsOpen;
+    }
+
+    async function runTest() {
+      if (isTesting) return;
+
+      isTesting = true;
+      abortController = new AbortController();
+
+      testButton.disabled = true;
+      $('#cancelButton').hidden = false;
+      testButton.textContent = 'Testing...';
+
+      liveStatus.innerHTML =
+        '<i class="busy"></i> Test in progress';
+
+      updateProgress(5, 'Preparing test');
+
+      speedValue.textContent = '0.00';
+      uploadSpeedValue.textContent = '0.00';
+
+      updateGauge(0, 'downloadNeedle');
+      updateGauge(0, 'uploadNeedle');
+
+      jitterValue.innerHTML = '-- <em>ms</em>';
+      $('#ping').innerHTML = '-- <em>ms</em>';
+      $('#packetLoss').innerHTML = '-- <em>%</em>';
+      $('#qualityScore').innerHTML = '-- <em>/100</em>';
+
+      showSpeed(downloadValue, 0);
+      showSpeed(uploadValue, 0);
+
+      try {
+        try {
+          await updateNetworkDetails();
+        } catch (error) {
+          console.warn('Network details unavailable', error);
+
+          document
+            .querySelectorAll('.info span')
+            .forEach((item) => {
+              item.textContent = 'Unavailable';
+            });
+
+          $('#serverName').textContent =
+            'Cloudflare edge (automatic)';
+        }
+
+        updateProgress(20, 'Testing latency');
+        const latency = await measurePing();
+
+        updateProgress(40, 'Measuring download');
+        const downloadSpeed = await measureDownload();
+
+        updateProgress(72, 'Measuring upload');
+        const uploadSpeed = await measureUpload();
+
+        latestResult = {
+          download: downloadSpeed,
+          upload: uploadSpeed,
+          ...latency
+        };
+
+        latestResult.score =
+          calculateQualityScore(latestResult);
+
+        $('#qualityScore').innerHTML =
+          `${latestResult.score} <em>/100</em>`;
+
+        renderQuality(latestResult);
+
+        updateProgress(100, 'Complete');
+        statusText.textContent = 'Real test complete';
+
+        liveStatus.innerHTML =
+          '<i></i> Test complete';
+      } catch (error) {
+        const cancelled = error.name === 'AbortError';
+
+        statusText.textContent = cancelled
+          ? 'Test cancelled'
+          : `Test unavailable: ${error.message}`;
+
+        console.error('Speed test failed', error);
+
+        updateProgress(
+          0,
+          cancelled ? 'Cancelled' : 'Test failed'
+        );
+      } finally {
+        isTesting = false;
+        abortController = null;
+
+        $('#cancelButton').hidden = true;
+        testButton.disabled = false;
+        testButton.textContent = 'Run real test';
+      }
+    }
+
+    // Tabs ko click aur keyboard navigation dono ka support diya gaya hai
+    document.querySelectorAll('.tab').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        $('.tab.active').classList.remove('active');
+
+        document.querySelectorAll('.tab').forEach((item) => {
+          item.setAttribute(
+            'aria-selected',
+            item === tab
+          );
+        });
+
+        tab.classList.add('active');
+        switchPanel(tab.textContent);
+      });
+    });
+
+    document
+      .querySelectorAll('.tab')
+      .forEach((tab, index, tabs) => {
+        tab.addEventListener('keydown', (event) => {
+          const allowedKeys = [
+            'ArrowRight',
+            'ArrowLeft',
+            'Home',
+            'End'
+          ];
+
+          if (!allowedKeys.includes(event.key)) return;
+
+          event.preventDefault();
+
+          const nextIndex =
+            event.key === 'Home'
+              ? 0
+              : event.key === 'End'
+                ? tabs.length - 1
+                : (
+                  index +
+                  (event.key === 'ArrowRight' ? 1 : -1) +
+                  tabs.length
+                ) % tabs.length;
+
+          tabs[nextIndex].focus();
+          tabs[nextIndex].click();
+        });
+      });
+
+    testButton.addEventListener('click', runTest);
+
+    $('#cancelButton').addEventListener('click', () => {
+      abortController?.abort();
+    });
+
+    $('#clearData').addEventListener('click', () => {
+      localStorage.clear();
+
+      currentUnit = 'Mbps';
+      $('#unitSelect').value = currentUnit;
+      $('#autoRun').checked = true;
+
+      statusText.textContent = 'Local data cleared';
+    });
+
+    $('#unitSelect').value = currentUnit;
+
+    $('#unitSelect').addEventListener('change', (event) => {
+      currentUnit = event.target.value;
+      localStorage.setItem('speedtest-unit', currentUnit);
+    });
+
+    // Theme preference ko localStorage se restore karte hain
+    const lightTheme =
+      localStorage.getItem('speedtest-theme') === 'light';
+
+    document.body.classList.toggle('light-theme', lightTheme);
+    $('#themeSetting').checked = lightTheme;
+
+    function setTheme(isLight) {
+      document.body.classList.toggle('light-theme', isLight);
+      $('#themeSetting').checked = isLight;
+
+      localStorage.setItem(
+        'speedtest-theme',
+        isLight ? 'light' : 'dark'
+      );
+    }
+
+    $('#themeToggle').addEventListener('click', () => {
+      setTheme(
+        !document.body.classList.contains('light-theme')
+      );
+    });
+
+    $('#themeSetting').addEventListener('change', (event) => {
+      setTheme(event.target.checked);
+    });
+
+    // User ki baaki preferences load aur save hoti hain
+    $('#autoRun').checked =
+      localStorage.getItem('speedtest-auto') !== 'false';
+
+    $('#autoRun').addEventListener('change', (event) => {
+      localStorage.setItem(
+        'speedtest-auto',
+        event.target.checked
+      );
+    });
+
+    $('#locationSetting').checked =
+      localStorage.getItem('speedtest-location') !== 'false';
+
+    $('#locationSetting').addEventListener('change', (event) => {
+      localStorage.setItem(
+        'speedtest-location',
+        event.target.checked
+      );
+    });
+
+    $('#privacySetting').checked =
+      localStorage.getItem('speedtest-privacy') === 'true';
+
+    $('#privacySetting').addEventListener('change', (event) => {
+      localStorage.setItem(
+        'speedtest-privacy',
+        event.target.checked
+      );
+    });
+
+    $('#motionSetting').checked =
+      localStorage.getItem('speedtest-motion') === 'true';
+
+    document.body.classList.toggle(
+      'reduce-motion',
+      $('#motionSetting').checked
+    );
+
+    $('#motionSetting').addEventListener('change', (event) => {
+      localStorage.setItem(
+        'speedtest-motion',
+        event.target.checked
+      );
+
+      document.body.classList.toggle(
+        'reduce-motion',
+        event.target.checked
+      );
+    });
+
+    const contrastSetting = $('#contrastSetting');
+
+    contrastSetting.checked =
+      localStorage.getItem('speedtest-contrast') === 'true';
+
+    document.body.classList.toggle(
+      'high-contrast',
+      contrastSetting.checked
+    );
+
+    contrastSetting.addEventListener('change', (event) => {
+      localStorage.setItem(
+        'speedtest-contrast',
+        event.target.checked
+      );
+
+      document.body.classList.toggle(
+        'high-contrast',
+        event.target.checked
+      );
+    });
+
+    const textSize = $('#textSize');
+
+    textSize.value =
+      localStorage.getItem('speedtest-text-size') || 'normal';
+
+    document.body.classList.add(
+      `text-${textSize.value}`
+    );
+
+    textSize.addEventListener('change', (event) => {
+      document.body.classList.remove(
+        'text-normal',
+        'text-large',
+        'text-larger'
+      );
+
+      document.body.classList.add(
+        `text-${event.target.value}`
+      );
+
+      localStorage.setItem(
+        'speedtest-text-size',
+        event.target.value
+      );
+    });
+
+    $('#fullscreenButton').addEventListener(
+      'click',
+      async () => {
+        try {
+          if (!document.fullscreenElement) {
+            await document.documentElement.requestFullscreen();
+          } else {
+            await document.exitFullscreen();
+          }
+        } catch (error) {
+          statusText.textContent =
+            'Fullscreen is not available in this browser';
+        }
+      }
+    );
+
+    // Space se test start aur Escape se current test cancel hota hai
+    document.addEventListener('keydown', (event) => {
+      if (
+        event.target.matches(
+          'input, select, textarea, button'
+        )
+      ) {
+        return;
+      }
+
+      if (event.code === 'Space') {
+        event.preventDefault();
+
+        if (!isTesting) {
+          runTest();
+        }
+      }
+
+      if (event.key === 'Escape' && isTesting) {
+        abortController?.abort();
+      }
+    });
+
+    // Browser aur connection information initial state me set karte hain
+    $('#browserInfo').textContent =
+      navigator.userAgentData?.brands?.[0]?.brand ||
+      navigator.userAgent.split(' ').at(-1) ||
+      'Browser';
+
+    updateOnlineState();
+
+    window.addEventListener('online', () => {
+      updateOnlineState(true);
+    });
+
+    window.addEventListener('offline', () => {
+      updateOnlineState(false);
+    });
+
+    const liveConnection =
+      navigator.connection ||
+      navigator.mozConnection ||
+      navigator.webkitConnection;
+
+    liveConnection?.addEventListener?.(
+      'change',
+      updateConnectionInfo
+    );
+
+    updateConnectionInfo();
+
+    // Agar auto-run enabled hai to page load par test start hoga
+    if ($('#autoRun').checked) {
+      runTest();
+    }
+  </script>
+</body>
+
+</html>
